@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 class Calculator extends StatefulWidget {
   @override
   _CalculatorState createState() => _CalculatorState();
@@ -9,36 +7,35 @@ class Calculator extends StatefulWidget {
 
 class _CalculatorState extends State<Calculator> {
   Widget calcbutton(String btntxt, Color btncolor, Color txtcolor) {
-  return Container(
-    child: ElevatedButton(
-      onPressed: () {
-        // TODO: Add function for button press
-        calculation(btntxt);
-      },
-      child: Text(
-        btntxt,
-        style: TextStyle(
-          fontSize: 35,
-          color: txtcolor,
+    return Container(
+      child: ElevatedButton(
+        onPressed: () {
+          // TODO: Add function for button press
+          calculation(btntxt);
+        },
+        child: Text(
+          btntxt,
+          style: TextStyle(
+            fontSize: 35,
+            color: txtcolor,
+          ),
+        ),
+        style: ElevatedButton.styleFrom(
+          shape: CircleBorder(),
+          primary: btncolor,
+          padding: EdgeInsets.all(20),
         ),
       ),
-      style: ElevatedButton.styleFrom(
-        shape: CircleBorder(),
-        primary: btncolor,
-        padding: EdgeInsets.all(20),
-      ),
-    ),
-  );
-}
-
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color.fromARGB(255, 79, 16, 72),
       appBar: AppBar(
         title: Text('Calculator'),
-        backgroundColor: Colors.black,
+        backgroundColor: Color.fromARGB(255, 79, 16, 72),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 5),
@@ -65,7 +62,7 @@ class _CalculatorState extends State<Calculator> {
                 calcbutton('AC', Colors.grey, Colors.black),
                 calcbutton('+/-', Colors.grey, Colors.black),
                 calcbutton('%', Colors.grey, Colors.black),
-                calcbutton('/', Colors.amber, Colors.white),
+                calcbutton('/', Color.fromARGB(255, 42, 35, 79), Colors.white),
               ],
             ),
             SizedBox(
@@ -78,7 +75,7 @@ class _CalculatorState extends State<Calculator> {
                 calcbutton('7', Colors.grey, Colors.black),
                 calcbutton('8', Colors.grey, Colors.black),
                 calcbutton('9', Colors.grey, Colors.black),
-                calcbutton('x', Colors.amber, Colors.white),
+                calcbutton('x', Color.fromARGB(255, 42, 35, 79), Colors.white),
               ],
             ),
             SizedBox(
@@ -91,7 +88,8 @@ class _CalculatorState extends State<Calculator> {
                 calcbutton('4', Colors.grey, Colors.black),
                 calcbutton('5', Colors.grey, Colors.black),
                 calcbutton('6', Colors.grey, Colors.black),
-                calcbutton('-', Colors.amber, Colors.white),
+                calcbutton(
+                    '-', const Color.fromARGB(255, 42, 35, 79), Colors.white),
               ],
             ),
             SizedBox(
@@ -104,13 +102,14 @@ class _CalculatorState extends State<Calculator> {
                 calcbutton('1', Colors.grey, Colors.black),
                 calcbutton('2', Colors.grey, Colors.black),
                 calcbutton('3', Colors.grey, Colors.black),
-                calcbutton('+', Colors.amber, Colors.white),
+                calcbutton(
+                    '+', const Color.fromARGB(255, 42, 35, 79), Colors.white),
               ],
             ),
             SizedBox(
               height: 10,
             ),
-           Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
@@ -126,10 +125,10 @@ class _CalculatorState extends State<Calculator> {
                   ),
                 ),
                 calcbutton('.', Colors.grey, Colors.black),
-                calcbutton('=', Colors.amber, Colors.black),
+                calcbutton(
+                    '=', const Color.fromARGB(255, 42, 35, 79), Colors.black),
               ],
             ),
-
           ],
         ),
       ),
